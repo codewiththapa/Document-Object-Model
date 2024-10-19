@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulating style Property</title>
+
+  <!--   Mainuplating Element's Style ..  1:style property  2: cssText  
+     3: getComputedStyle()  4: className property  5: classList Property   -->
+
+<style>
+
+  input{
+    background-color: azure;
+    font-size: 18px;
+    width: 300px;
+  }
+</style>
+
+</head>
+<body>
+<!--  1 -->
+  <input type="text" id="user-name" placeholder="username">
+
+
+<!-- 2 -->
+  <input type="radio" id="user" style="background-color: red; height:100px; width:80px;">
+
+  <!-- 3-->
+  <h1 id="title1" class="main message1">DOM MAINPULATION1</h1>
+  <h1 id="title2" class="main message2">DOM MAINPULATION2</h1>
+
+  <!-- 4 -->
+  <h3 id="vip" class="main message is ">javascript</h3>
+
+  <script>
+
+    //3:
+
+   let title1 =   document.getElementById("title1");
+       title1.className = 'first class is 1 '; 
+   console.log(title1.className);
+
+ 
+   // 3: className = 'second class is 2'  will overRide the original to stop overRiding className use "+=" concatenate:
+   let title2 =   document.getElementById("title2");
+       title2.className += 'second class is 2'; 
+   console.log(title2);
+
+  // 4:classList property :    to add in:   classList.add('new')
+  let list = document.getElementById('vip')
+   console.log(list.classList);
+
+   list.classList.add('old1','old2');
+   console.log(list)
+  
+   //to remove in classList.remove
+   list.classList.remove('message','main');
+   console.log(list)
+
+
+// 1:      SYNTAX:   window.getComputedStyle(element,pseudoElement)
+   let inputIs = document.getElementById('user-name');
+   let cssStyle =  window.getComputedStyle(inputIs).fontSize;  
+   let cssStyle2 =  window.getComputedStyle(inputIs).backgroundColor; 
+   let cssStyle3 =  window.getComputedStyle(inputIs).width; 
+    console.log(cssStyle);    //output:18px
+    console.log(cssStyle2);  //output:rgb(240, 255, 255)
+    console.log(cssStyle3);
+
+//2:
+    let inputBox = document.getElementById('user');
+    console.log(inputBox.style);
+    console.log(inputBox.style.backgroundColor);  //output:pink
+   
+
+   //adding style property to element
+    console.log(inputBox.style.padding = '40px');
+
+/* adding cssText .. but this normal cssText will overRide other style properties in console   */
+  inputBox.style.cssText = 'width:100px';
+  console.log(inputBox);
+
+// to stop overRide style we need to concatenate using    "+="
+  
+inputBox.style.cssText += 'width 100px';
+console.log(inputBox);
+
+// also can use multiple properties in cssText
+
+inputBox.style.cssText += 'width 100px; height:20px;';
+console.log(inputBox);
+  </script>
+
+</body>
+</html>

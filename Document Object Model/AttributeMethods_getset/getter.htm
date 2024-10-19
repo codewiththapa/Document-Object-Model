@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getter Setter </title>
+
+<!-- Attributes method DOM..  1:getAttribute  2:setAttribute   3:hasAttribute            4:removeAttribute   -->
+
+</head>
+<body>
+  
+    <input type="text" id="user-name" placeholder="user-name">
+
+    <script>
+
+     let input = document.getElementById('user-name');
+       console.log(input.attributes);
+
+ // getAttribute() method 
+   console.log(input.getAttribute('id'));  
+   console.log(input.getAttribute('placeholder'));
+   
+ // setAttribute("attribute", "attributeName") 
+ input.setAttribute('name','dont know')
+ console.log(input);
+
+ // hasAttribute () :  boolean value "true" / "false"
+   console.log(input.hasAttribute('class'));   // output:false
+   console.log(input.hasAttribute('id'));      //output:true
+
+// removeAttribute ..
+input.removeAttribute('placeholder');
+console.log(input);
+
+ </script>
+
+</body>
+</html>

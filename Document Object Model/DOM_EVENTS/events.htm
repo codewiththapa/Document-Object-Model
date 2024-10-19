@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Events</title>
+</head>
+<body>
+<!-- 1 way to use EventListener-->
+  <div id="container">
+  <button type="button" onclick="console.log('Button Clicked')">Click</button>
+  </div>
+  <br/> 
+  <br/> 
+  <br/>
+
+   <!--2 another way EventListener-->
+    <button type="radio"  style=" background-color:yellow; color: blueviolet; height: 80px; width: 60px; border-radius:20px ; font-size: larger;" onclick="turnOn()">on
+    </button>
+
+   <br/> <br/> <br/>
+   <!--3:   Event object   -->
+   <button onclick="console.log(event);">Click Event Object</button>
+   <br/> <br/> <br/>
+
+   <!--event.type-->
+   <h2>No.2 "event.type"</h2>
+   <button onclick="console.log(event.type,);">Click Event type</button>
+   
+   <!--event.target-->
+   <br/> <br/> <br/>
+   <h3>No.3 "event.target" </h3>
+   <button onclick="console.log(event.target);">Click Event target</button>
+
+   <!-- "this" keyword inside eventHandler refers to target element-->
+   <br/> <br/> <br/>
+   <h3>No.4 "this" keyword </h3>
+   <button onclick="console.log(this);">Click "this" keyword</button>
+
+   <!-- "this."  access properties of attributes -->
+   <br/> <br/> <br/>
+   <h3>No.5 "this" to access attributes </h3>
+   <button type="button" id="user" onclick="console.log(this.id);">
+    Click "this" properties </button>
+
+       <!-- to access "type" attributes property directly in Event Handler -->
+   <br/> <br/> <br/>
+   <h3> No.6 to access property directly in Event Handler </h3>
+   <button type="button" id="user" onclick="console.log(type);">
+    Access properties </button>
+
+  <!-- No.7   Adding EventHandler name in the JAVASCRIPT -->
+   <br/> <br/> <br/>
+   <h3> EventHandler name in the JAVASCRIPT </h3>
+   <button type="button" id="eventJs" > Click EventHandler JAVASCRIPT </button>
+
+   <!-- NO:8  addEventListener()-->
+   <br><br><br>
+   <button type="button" id="listen">addEventListener</button>
+  
+  <script>
+
+   //8:
+      let listen = document.querySelector('#listen');
+      listen.addEventListener('click',function add (){
+        console.log('click on addEventListener Method')
+      });
+
+      listen.addEventListener('click',(event)=>{
+        console.log(event.type)
+      })
+
+  // to removeEventListener
+    listen.removeEventListener('click',add) ; 
+
+   //7:
+  let jsEvent = document.getElementById('eventJs');
+    jsEvent.onclick = ()=>{
+      console.log(' No.7   EventHandler Javascript clicked');
+    };
+   
+    //to access attributes properties
+    let eventIS = document.getElementById('eventJs');
+   eventIS.onclick = ()=>{
+      console.log(this.id);
+    };
+
+    //2:
+   function turnOn(){
+    console.log('Light is on from fxn');
+   };
+
+  /* syntax : addEventListener(events,function,useCapture)   .. 
+ useCapture is optional , and it returns boolean value .. by default it will be false */
+
+    </script>
+    
+</body>
+</html>

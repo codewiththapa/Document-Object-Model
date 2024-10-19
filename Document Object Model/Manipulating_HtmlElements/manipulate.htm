@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mainuplate HTML Elements</title>
+</head>
+<body>
+
+  //1.
+  <ul id="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Blog</li>
+    <li style="display: none;">project</li>
+  </ul>
+  
+  <script>
+   
+   //1.  
+     let menu = document.getElementById('menu');
+
+     let list = document.createElement('li');
+     list.innerHTML = 'contact';
+
+     menu.appendChild(list);
+     console.log(menu);
+
+     //  textContent..
+     console.log(menu.textContent);
+
+/* "textContent vs innerText"   
+<li style="display: none;">project</li> ..here we given 'display:none' will be invisible in "innerText"    but will be visible in "textContent"       */
+
+     // innerText       
+     console.log(menu.innerText);
+
+/* textContent: can read and replace and write text .so "innerHTML" and "textContent" writes text   */
+ menu.textContent = 'Hello javascript !';
+
+ /* "innerHTML"  vs  "textContent" : */
+
+ //"innerHTML" will not print <h3></h3> tag ...only gives text as a output.. 
+ menu.innerHTML = '<h3> innerHTML vs textContent </h3> ';
+
+ //"textContent"  will print all <h3> tags and text as a output..
+ menu.textContent = '<h3> innerHTML vs textContent vs innerText </h3> ' ;
+
+ // after() method :  syntax:   element.after(node1,node2,.....nodeN...)
+
+
+       let div = document.createElement('div');
+   div.innerHTML= '<h1> software Enginner Mr. Suman Thapa </h1>' ;
+   //
+   document.body.appendChild(div);
+   //
+   div.id = 'title';
+   div.className = 'className' ;
+  console.log(div);
+ 
+ </script>
+</body>
+</html>

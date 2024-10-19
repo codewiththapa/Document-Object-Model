@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM JAVASCRIPT</title>
+</head>
+<body>
+
+  
+  
+  <h1>first</h1>
+  <h1>second</h1>
+  <h1>third</h1>
+
+  <p class="class-name">Nepal</p>
+  <p class="class-name">China</p>
+  <p class="class-name">Korea</p>
+
+  <div id = 'nested'>
+    <p class="class-name">Butwal</p>
+    <p class="class-name">Kanchhi Bazar</p>
+</div>
+
+  <div id = 'message'>
+    <h1>DOCUMENT OBJECT MODEL JS</h1>
+    <input type="radio" name="language" value="js">
+    <input type="radio" name="language" value="phyton">
+  </div>
+
+  <script>
+
+    //querySelector can use in various ways..
+
+   //selecting multiple elements ..
+    const queryIs = document.querySelectorAll('div,h1')
+    console.log(queryIs);
+
+    // we can select querySelector using TagName also..
+    const tagIs = document.querySelectorAll('p')
+    console.log(tagIs);
+
+
+   // querySelector:  select elementName like  ..Css type  and returns normal html element
+   const cssQuery = document.querySelector('.class-name')
+   console.log(cssQuery);
+
+   //querySelectorAll : selects all elements belong that name.. return nodelist like class
+   const selectAllQuery = document.querySelectorAll('.class-name')
+   console.log(selectAllQuery);
+    
+    let nestedId = document.getElementById('nested')
+     let nestedClass = nestedId.getElementsByClassName('class-name')
+     console.log(nestedClass);
+
+    // getElementsByClassName : return HTMLcollection   (element.className) also
+   const className =  document.getElementsByClassName('class-name');
+    console.log(className);
+   
+   // getElmentsByTagName : will return HTMLcollection in Array [..] and only tagName
+   const tag = document.getElementsByTagName('h1')
+   console.log(tag);
+
+//getElementsByName :  return nodeList in Array [ ..] form  and only  (name = " ")
+  const btn = document.getElementsByName('language')
+  console.log(btn);
+
+ // getElementById :  returns nothing   
+let msg = document.getElementById('message');
+console.log(msg);
+
+  </script>
+</body>
+</html>

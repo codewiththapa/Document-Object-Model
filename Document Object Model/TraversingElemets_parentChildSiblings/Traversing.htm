@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Taversing</title>
+</head>
+<body>
+    
+  //1.
+    <div class="title">
+    <p class="text">I love to code.</p>
+  </div>
+
+  //2.
+  <div class="parent"><p>Hello Javascript</p>
+  <p>Hello java</p>
+  <p>Hello python</p>
+  <p>Hello C</p>
+  </div>
+
+  //3.
+
+  <div class="siblings"><p>Hello Javascript</p>
+    <h1>react</h1>
+    <h1 class="flutterSib">flutter</h1>
+    <h1>react native</h1>
+    </div>
+
+    <script>
+
+          //1.Travesring element: selecting parent elements from child elements..
+     const traversing = document.querySelector('.text');
+      console.log(traversing.parentNode);
+        
+      //2: Traversing Firstchild element
+        let traversingChild = document.querySelector('.parent');
+          console.log(traversingChild.firstElementChild);
+          console.log(traversingChild.lastElementChild);
+          //To get all child elements : it will return output in array nodeList [..]
+          console.log(traversingChild.childNodes);
+    
+  //3: Traversing sibling elements:
+   const traverseSib =  document.querySelector(".flutterSib");
+       console.log(traverseSib.previousElementSibling);
+       console.log(traverseSib.nextElementSibling);
+
+
+
+
+    </script>
+</body>
+</html>
